@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trade Bank</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <link rel="icon" href="{{url_for('static', filename='image.png')}}">
+</head>
+<body>
+    <header>
+        <img src="{{url_for('static', filename='image.png')}}" alt="">
+        <h1>Trade Bank</h1>
+        <p>Invest, Buy and Prosper.</p>
+    </header>
+    <main>
+        {% if session["user_id"] %}
+            <div class="sub">
+                <h2>Your Profile</h2>
+                <a href="/profile"><button class="btn">Profile</button></a>
+                <a href="/changepassword"><button class="btn">Change Password</button></a>
+				<a href="/transfer"><button class="btn">TradePay</button></a>
+                <a href="/logout"><button class="btn">Logout</button></a>
+            </div>
+            <div class="sub">
+                <h2>The Press</h2>
+                <a href="/news/post"><button class="btn">Post</button></a>
+                <a href="/news"><button class="btn">News</button></a>
+            </div>
+        {% else %}
+            <a href="/login"><button class="btn">Login</button></a>
+            <a href="/signup"><button class="btn">Register</button></a>
+        {% endif %}
+    </main>
+    <footer>
+        <p>&copy; 2024 Trade Bank. All rights reserved.</p>
+    </footer>
+</body>
+</html>

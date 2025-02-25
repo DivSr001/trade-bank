@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile | Trade Bank</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <link rel="icon" href="{{url_for('static', filename='image.png')}}">
+</head>
+<body>
+    <header>
+        <img src="{{url_for('static', filename='image.png')}}" alt="">
+        <h1>Profile</h1>
+        <p>Invest, Buy and Prosper.</p>
+    </header>
+    <main>
+        <div class="details">
+            <span>Account Holder: </span>
+            <span>{{user.acc_holder}}</span>
+        </div>
+        <div class="details">
+            <span for="balance">Balance: </span>
+            <span>{{user.balance}}</span>
+        </div>
+        <a href="/"><button class="btn">Back</button></a>
+    </main>
+</body>
+</html>

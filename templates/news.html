@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <link rel="icon" href="{{url_for('static', filename='image.png')}}">
+</head>
+<body>
+    <header>
+        <img src="{{url_for('static', filename='image.png')}}" alt="">
+        <h1>News</h1>
+        <p>Stay Updated!</p>
+    </header>
+    <main>
+        {% for post in news %}
+            <div class="post">
+                <details>
+                    <summary>{{post.title}}</summary>
+                    <p>{{post.content}}</p>
+                </details>
+            </div>
+        {% endfor %}
+    </main>
+    <a href="/"><button class="btn">Back</button></a>
+</body>
+</html>

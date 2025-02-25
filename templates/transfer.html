@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TradePay</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <link rel="icon" href="{{url_for('static', filename='image.png')}}">
+</head>
+<body>
+    <header>
+        <img src="{{url_for('static', filename='image.png')}}" alt="">
+        <h1>TradePay</h1>
+        <p>Invest, Buy and Prosper.</p>
+    </header>
+    <main>
+        <form action="/transfer" method="post">
+            <div>
+                <label for="amount">Amount:</label>
+                <input type="number" id="amount" name="amount" min="1" required>
+            </div>
+            <div>
+                <label for="acc_holder_name">Reciever's Name: </label>
+                <input type="text" id="recipient_acc_holder" name="recipient_acc_holder" required>
+            </div>
+            <button class="btn" type="submit">Pay</button>
+        </form>
+        <a href="/"><button class="btn">Back</button></a>
+        {% if error %}
+            <p style="color: red;">{{error}}</p>
+        {% else %}
+            <p></p>
+        {% endif %}
+    </main>
+</body>
+</html>

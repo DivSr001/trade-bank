@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post News</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <link rel="icon" href="{{url_for('static', filename='image.png')}}">
+</head>
+<body>
+    <header>
+        <img src="{{url_for('static', filename='image.png')}}" alt="">
+        <h1>Post News</h1>
+        <p>Keep everyone updated</p>
+    </header>
+    <main>
+        <form action="/news/post" method="post">
+            <div>
+                Title: <input type="text" name="title" required><br>
+            </div>
+            <div>
+                Content: <textarea name="content" rows="4" cols="50" required></textarea><br>
+            </div>
+            <div>
+                <button type="submit" class="btn">Post</button>
+            </div>
+        </form>
+        <a href="/"><button class="btn">Back</button></a>
+    </main>
+</body>
+</html>
