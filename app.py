@@ -1,8 +1,5 @@
 from flask import Flask, render_template, url_for, redirect, request, session
 from flask_sqlalchemy import SQLAlchemy
-from datetime import datetime, timedelta
-import threading, random, time
-import google.generativeai as genai
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:@localhost/trade'
 app.secret_key = "sdhferh9aerht458tyfhertg485trhg"
@@ -121,7 +118,3 @@ def transfer():
             return render_template("transfer.html", error="Invalid recipient or insufficient funds")
     return render_template("transfer.html")
 
-
-
-if __name__=='__main__':
-    app.run(debug=True, host='0.0.0.0')
